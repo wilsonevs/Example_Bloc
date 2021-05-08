@@ -28,3 +28,10 @@ class UsuarioBloc extends Bloc<UsuarioEvents, UsuarioState> {
     }
   }
 }
+
+
+
+
+
+
+

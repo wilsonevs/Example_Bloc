@@ -14,24 +14,29 @@ class Pagina1Page extends StatelessWidget {
         centerTitle: true,
         actions: <Widget>[
           Container(
-            margin: const EdgeInsets.only(right: 10),
-            child: IconButton(
-              icon: Icon(Icons.delete),
-              onPressed: () {
-                usuarioBloc1.add(DeleteUsuario());
-              },
-            ),
-          ),
+              margin: const EdgeInsets.only(right: 10),
+              child: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {
+                    usuarioBloc1.add(DeleteUsuario());
+                  })),
         ],
       ),
-      body: BlocBuilder<UsuarioBloc, UsuarioState>(
-        builder: (_, state) => state.existeUsuario
-            ? InformacionUsuario(state.usuario)
-            : Center(child: Text('No ahi usuario selecionado')),
-      ),
+      body: BodyScaffold(),
       floatingActionButton: FloatingActionButton(
           child: Icon(Icons.accessibility_new),
           onPressed: () => Navigator.pushNamed(context, 'pagina2')),
+    );
+  }
+}
+
+class BodyScaffold extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<UsuarioBloc, UsuarioState>(
+      builder: (_, state) => state.existeUsuario
+          ? InformacionUsuario(state.usuario)
+          : Center(child: Text('No ahi usuario selecionado')),
     );
   }
 }
