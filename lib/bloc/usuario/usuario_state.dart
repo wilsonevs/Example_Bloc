@@ -13,5 +13,5 @@ class UsuarioState {
   UsuarioState copyWith({Usuario usuario}) =>
       UsuarioState(user: usuario ?? this.usuario);
 
-  UsuarioState estadoIncial() => UsuarioState();
+  UsuarioState EstadoIncial() => UsuarioState();
 }

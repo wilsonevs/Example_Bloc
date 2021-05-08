@@ -24,7 +24,7 @@ class UsuarioBloc extends Bloc<UsuarioEvents, UsuarioState> {
         profesione: [...state.usuario.profesione, event.newProfesion],
       ));
     } else if (event is DeleteUsuario) {
-      yield state.estadoIncial();
+      yield state.EstadoIncial();
     }
   }
 }
